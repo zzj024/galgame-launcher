@@ -1,0 +1,29 @@
+server:
+  port: 21888
+
+spring:
+  application:
+    name: galgame-service
+  datasource:
+    url: jdbc:sqlite:${user.dir}/data/galgame.db
+    driver-class-name: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 1  # SQLite 单写，连接池大小设为 1
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+    default-property-inclusion: non_null
+
+logging:
+  level:
+    com.galgame: DEBUG
+    org.springframework.web.socket: DEBUG
+  file:
+    path: ${user.dir}/logs
+
+# WebSocket 与 HTTP 共用端口，注册在 /ws 路径下
+
+# 数据库迁移
+galgame:
+  db:
+    target-version: 1
+    migration-location: classpath:db/migration
