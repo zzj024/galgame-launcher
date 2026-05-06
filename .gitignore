@@ -1,0 +1,22 @@
+# JetBrains IDE 配置文件（IDEA/WebStorm）
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# 依赖包/构建产物（根据你的项目类型调整）
+node_modules/  # 前端项目
+target/        # Java 项目
+build/
+dist/
+output/
+
+# 系统缓存文件
+.DS_Store
+Thumbs.db
+
+# 日志/临时文件
+*.log
+temp/
+tmp/
